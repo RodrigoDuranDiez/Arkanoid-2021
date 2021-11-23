@@ -25,7 +25,7 @@ public class Bola extends GOval{
 		}
 		
 		//rebota con la pared de la derecha y izquierda
-		if ( this.getX() > ark.getWidth()|| getX() < 0){
+		if ( this.getX()+ getWidth() > ark.getWidth()|| getX() < 0){
 			dx = dx * -1;
 		}
 		//chequeo la esquina superior izquierda
