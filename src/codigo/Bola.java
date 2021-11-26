@@ -20,12 +20,12 @@ public class Bola extends GOval{
 	}
 	public void muevete(Arkanoid ark){
 		//rebota con el suelo y techo
-		if (this.getY() > ark.getHeight()|| getY() < 0){
+		if (this.getY() > ark.getHeight()|| getY() < 10){
 			dy = dy * -1;
 		}
 		
 		//rebota con la pared de la derecha y izquierda
-		if ( this.getX()+ getWidth() > ark.getWidth()|| getX() < 0){
+		if ( this.getX()+ getWidth() > ark.ANCHO_PANTALLA-50|| getX() < 4){
 			dx = dx * -1;
 		}
 		//chequeo la esquina superior izquierda
@@ -61,6 +61,7 @@ public class Bola extends GOval{
 			else if(auxiliar.getX() + getWidth()<=posx || auxiliar.getX()== posx){
 				dx = dx * -1;;
 			}
+			ark.miMarcador.incrementaMarcador(1);
 			ark.remove(auxiliar);
 			noHaChocado = false;
 		}
