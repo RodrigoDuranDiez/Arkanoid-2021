@@ -25,7 +25,7 @@ public class Bola extends GOval{
 		}
 		
 		//rebota con la pared de la derecha y izquierda
-		if ( this.getX()+ getWidth() > ark.ANCHO_PANTALLA-50|| getX() < 4){
+		if ( this.getX()+ getWidth() > ark.ANCHO_PANTALLA-110|| getX() < 65){
 			dx = dx * -1;
 		}
 		//chequeo la esquina superior izquierda
@@ -54,11 +54,11 @@ public class Bola extends GOval{
 			noHaChocado = false;
 		}else if (auxiliar == null){// si vale null es que no había nada ahí
 			
-		}else if (auxiliar instanceof Ladrillo){//si es un ladrillo
-			if(auxiliar.getY() + getHeight()<=posy || auxiliar.getY()== posy){
+		}else if (auxiliar instanceof Ladrillo2){//si es un ladrillo
+			if(auxiliar.getY()-1 + getHeight()+2<=posy || auxiliar.getY()== posy){
 				dy = dy * -1;
 			}
-			else if(auxiliar.getX() + getWidth()<=posx || auxiliar.getX()== posx){
+			else if(auxiliar.getX()-1 + getWidth()+2<=posx || auxiliar.getX()== posx){
 				dx = dx * -1;;
 			}
 			ark.miMarcador.incrementaMarcador(1);
